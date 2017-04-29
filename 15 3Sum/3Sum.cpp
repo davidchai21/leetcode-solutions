@@ -2,50 +2,26 @@ class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& num) {
         vector<vector<int> > res;
-
-    std::sort(num.begin(), num.end());
-
-    for (int i = 0; i < num.size(); i++) {
-        
-        int target = -num[i];
-        int front = i + 1;
-        int back = num.size() - 1;
-
-        while (front < back) {
-
-            int sum = num[front] + num[back];
-            
-            // Finding answer which start from number num[i]
-            if (sum < target)
-                front++;
-
-            else if (sum > target)
-                back--;
-
-            else {
-                vector<int> triplet(3, 0);
-                triplet[0] = num[i];
-                triplet[1] = num[front];
-                triplet[2] = num[back];
-                res.push_back(triplet);
-                
-                // Processing duplicates of Number 2
-                // Rolling the front pointer to the next different number forwards
-                while (front < back && num[front] == triplet[1]) front++;
-
-                // Processing duplicates of Number 3
-                // Rolling the back pointer to the next different number backwards
-                while (front < back && num[back] == triplet[2]) back--;
+        if (num.size()<3) return res;
+        sort(num.begin(),num.end());
+        for (int i=0;i<num.size()-2;i++)
+        {
+            if (num[i]==num[i-1] && i>0) continue;
+            int sum=-num[i];
+            int m=i+1, n=num.size()-1;
+            while (m<n)
+            {
+                if (num[m]+num[n]>sum) n--;
+                else if (num[m]+num[n]<sum) m++;
+                else
+                {
+                    res.push_back(vector<int>{num[i],num[m],num[n]});
+                    while (num[m]==num[m+1]) m++;
+                    while (num[n]==num[n-1]) n--;
+                    m++; n--;
+                }
             }
-            
         }
-
-        // Processing duplicates of Number 1
-        while (i + 1 < num.size() && num[i + 1] == num[i]) 
-            i++;
-
-    }
-    
-    return res;
+        return res;
     }
 };
