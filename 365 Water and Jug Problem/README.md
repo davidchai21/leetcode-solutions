@@ -1,0 +1,3 @@
+This question is easy. It's a matter of math. If 2 numbers' gcd is 1, then there is a x and y that x*a-y*b=1...
+
+Runtime: 3ms
