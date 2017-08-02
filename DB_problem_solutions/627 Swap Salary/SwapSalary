@@ -1,0 +1,3 @@
+# Write your MySQL query statement below
+Update salary
+set sex=char(ascii('f')^ascii('m')^ascii(sex));
