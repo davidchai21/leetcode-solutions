@@ -1,0 +1,3 @@
+This question is hard. The idea is to ignore other numbers but store the one who appears only once. But using 2 numbers is tricky. And I peeked the Solution...
+
+Runtime: 9ms
