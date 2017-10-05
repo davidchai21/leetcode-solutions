@@ -1,0 +1,3 @@
+This question is not hard, but interesting. I first came up with a O(n^2) algorithm. But actually it has a O(n) by using Hashmap...
+
+Runtime: 36ms
