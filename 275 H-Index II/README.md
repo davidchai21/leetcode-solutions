@@ -1,0 +1,3 @@
+This question is easy. Using Binary Search is the key. However, I need to practice more...
+
+Runtime: 9ms
