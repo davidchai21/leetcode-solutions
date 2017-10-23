@@ -1,0 +1,3 @@
+This question is easy. But it asks the BST to be unique, having duplicate values would be wrong...
+
+Runtime: 12ms
